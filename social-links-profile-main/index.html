@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Social Links</title>
+</head>
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: hsl(0, 0%, 8%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  .card {
+    background-color: hsl(0, 0%, 12%);
+    width: 320px;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  .user-photo {
+    width: auto;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 100%;
+  }
+
+  .info {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .name {
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .ubication {
+    color: hsl(75, 94%, 57%);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .description {
+    display: block;
+    margin: 20px auto;
+    font-size: 14px;
+    color: hsl(0, 0%, 100%, 0.7);
+    text-align: center;
+  }
+
+  a {
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    border-radius: 4px;
+  }
+
+  .links {
+    font-weight: 600;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+</style>
+
+<body>
+  <main>
+    <div class="card">
+      <img class="user-photo" src="../social-links-profile-main/assets/images/avatar-jessica.jpeg" alt="Avatar">
+      <div class="info">
+        <h1 class="name">Jessica Randall</h1>
+        <p class="ubication">London, United Kingdom</p>
+      </div>
+      <q class="description">Front-end developer and avid reader</q>
+      <div class="links">
+        <a href="">GitHub</a>
+        <a href="">Frontned Mentor</a>
+        <a href="">LinkedIn</a>
+        <a href="">Twitter</a>
+        <a href="">Instagram</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
