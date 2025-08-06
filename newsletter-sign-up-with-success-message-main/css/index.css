@@ -1,0 +1,229 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color-red: hsl(4, 100%, 67%);
+  --neutral-color-blue-800: hsl(234, 29%, 20%);
+  --neutral-color-blue-700: hsl(235, 18%, 26%);
+  --neutral-color-grey: hsl(0, 0%, 58%);
+  --neutral-color-white: hsl(0, 0%, 100%);
+  --transparent-color-blue-700: hsla(235, 18%, 26%, 0.8);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/roboto-v48-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/roboto-v48-latin-700.woff2") format("woff2");
+}
+
+html {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--neutral-color-blue-700);
+  font-size: 0.85rem;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  border-radius: 20px;
+  width: 50rem;
+}
+
+.card > div {
+  width: 55%;
+  padding: 4rem 2rem;
+  padding-right: 3.5rem;
+}
+picture {
+  width: 45%;
+}
+
+picture img {
+  width: 100%;
+}
+
+.card > div > p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.3rem 0;
+}
+
+li {
+  background: url("../assets/images/icon-success.svg") no-repeat left center;
+  background-size: 16px 16px;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  line-height: 16px;
+}
+
+form > div {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+form > input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--neutral-color-grey);
+  font-size: 0.85rem;
+}
+
+button {
+  background-color: var(--neutral-color-blue-800);
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: var(--neutral-color-white);
+  cursor: pointer;
+  border: 1px solid;
+}
+
+button:hover {
+  background-color: var(--primary-color-red);
+  border: 1px solid var(--primary-color-red);
+  box-shadow: 7px 10px 25px
+    color-mix(in srgb, var(--primary-color-red) 60%, transparent);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--transparent-color-blue-700);
+  z-index: 10;
+  width: 100%;
+  display: none;
+}
+
+.modal .card {
+  flex-direction: column;
+  width: 27rem;
+  padding: 2.5rem 3rem;
+}
+
+.modal .card > img {
+  width: 3.5rem;
+}
+
+.modal .card > p {
+  line-height: 1.5rem;
+}
+.modal .card > h1 {
+  margin: 1.5rem 0;
+}
+
+.invalidText {
+  color: var(--primary-color-red);
+}
+
+.invalidInput {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color-red) 20%,
+    transparent
+  );
+  border: 1px solid var(--primary-color-red);
+}
+
+input.invalidInput::placeholder {
+  color: var(--primary-color-red);
+}
+
+input.invalidInput:focus {
+  outline: 2px solid
+    color-mix(in srgb, var(--primary-color-red) 50%, white 100%);
+}
+
+@media (max-width: 60rem) {
+  html {
+    font-size: 20px;
+  }
+  article{
+    all: unset;
+  }
+  .card {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 0;
+  }
+
+  .card > div {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .card > picture {
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .card > picture img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .modal .card {
+    flex-direction: column;
+    width: 27rem;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 3rem;
+    border-radius: 0;
+  }
+
+  #dismiss {
+    margin-top: auto;
+  }
+}
